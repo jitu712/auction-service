@@ -11,6 +11,8 @@ provider:
   memorySize: 256
   stage: ${opt:stage, 'dev'}
   region: "ap-south-1"
+  environment:
+    AUCTION_TABLE_NAME: ${self:custom.AuctionTable.name}
   iamRoleStatements:
     - ${file(iam/AuctionTableIAM.yml):AuctionTableIAM}
 
@@ -25,3 +27,10 @@ functions:
       - http:
           method: POST
           path: /auction
+
+custom:
+  AuctionTable:
+    name: !Ref AuctionTable
+    arn: !GetAtt AuctionTable.Arn
+  bundle:
+    linting: false
