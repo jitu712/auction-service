@@ -12,6 +12,20 @@ provider:
   stage: ${opt:stage, 'dev'}
   region: "ap-south-1"
 
+resources:
+  Resources:
+    AuctionTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: AuctionTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+
 functions:
   createAuction:
     handler: src/handlers/auction.handler
