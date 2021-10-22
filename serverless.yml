@@ -21,11 +21,18 @@ resources:
 
 functions:
   createAuction:
-    handler: src/handlers/auction.handler
+    handler: src/handlers/createAuction.handler
     events:
       - http:
           method: POST
           path: /auction
+
+  getAuctions:
+    handler: src/handlers/getAuctions.handler
+    events:
+      - http:
+          method: GET
+          path: /auctions
 
 custom:
   AuctionTable:
