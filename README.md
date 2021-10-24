@@ -13,3 +13,18 @@ npm install
 ```
 
 You are ready to go!
+
+using middy middleswares like bodyParser, errorHandler
+along with Create, implemented Read and Update operations via different handlers using dynamoDb query
+creating a common middleware lib to be reused in multiple lambda functions
+
+events
+  - http
+  - schedule
+
+sls deploy --verbose
+sls deploy -f functionName
+sls logs -f functionName -t
+sls logs -f functionName --startTime 1m
+sls logs -f functionName --startTime 1h
+sls invoke -f functionName -l
