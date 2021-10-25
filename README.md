@@ -17,6 +17,8 @@ You are ready to go!
 using middy middleswares like bodyParser, errorHandler
 along with Create, implemented Read and Update operations via different handlers using dynamoDb query
 creating a common middleware lib to be reused in multiple lambda functions
+creating and deploying schedule functions to process data of dynamodb
+added middy/validator and used it to validate queryParam status while getting auctions
 
 events
   - http
